@@ -11,5 +11,9 @@ jobs:
       # экшен, выполняет какую-то задачу
       # checkout – клонирует репозиторий
       - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          pip install poetry
+          make install
       # run – произвольная bash-команда
       - run: make lint
