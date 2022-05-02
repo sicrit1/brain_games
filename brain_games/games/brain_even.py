@@ -19,7 +19,7 @@ def is_even():
     i = 1
     while i <= 3:
         argument = question()
-        if argument[0] == False:
+        if argument[0] is False:
             if argument[2] % 2 == 0:
                 right_answer = "\"yes\""
             else:
