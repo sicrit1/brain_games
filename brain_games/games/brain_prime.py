@@ -5,34 +5,18 @@ from random import randint
 import prompt
 
 
-def progression(a, d, k):
-    i = 0
-    prog = [a]
-    for i in range(k):
-        Q = a + d
-        prog = prog + [Q]
-        a = Q
-    return prog
-
-
-def random_arg():
-    a = randint(1, 100)
-    d = randint(1, 10)
-    k = randint(5, 10)
-    return (a, d, k)
-
-
 def question():
-    return print('What number is missing in the progression?')
+    return print('Answer \"yes\" if given number is prime. Otherwise answer \"no\"')
 
 
 def random_question():
-    (a, d, k) = random_arg()
-    prog = progression(a, d, k)
-    n = randint(0, k - 1)
-    s = prog[n]
-    prog[n] = ".."
-    return (" ".join(map(str, prog)), s)
+    n = randint(1, 100)
+    i = n - 1
+    while i > 1:
+        if n % i == 0:
+            return (n, 'no')
+        i = i - 1
+    return (n, 'yes')
 
 
 def main_operation():
@@ -41,7 +25,7 @@ def main_operation():
     print('Hello, ' + name + '!')
     print_question = question()
     i = 1
-    while i <= 3:
+    while i <=3:
         (x, y) = random_question()
         output_question = x
         right_answer = y

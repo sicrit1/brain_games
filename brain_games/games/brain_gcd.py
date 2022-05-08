@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 from random import randint
-from random import choice
 import prompt
 
 
@@ -9,13 +8,14 @@ def random_number():
     y = randint(1, 100)
     return (x, y)
 
+
 def gcd(x, y):
     if x > y:
         i = y
         while i > 0:
             if x % i == 0 and y % i == 0:
                 return i
-            i = i -1
+            i = i - 1
     else:
         i = x
         while i > 0:
