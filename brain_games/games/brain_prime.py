@@ -6,7 +6,8 @@ import prompt
 
 
 def question():
-    return print('Answer \"yes\" if given number is prime. Otherwise answer \"no\"')
+    return print('Answer \"yes\" if given number is prime. \
+Otherwise answer \"no\"')
 
 
 def random_question():
@@ -23,9 +24,9 @@ def main_operation():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
-    print_question = question()
+    question()
     i = 1
-    while i <=3:
+    while i <= 3:
         (x, y) = random_question()
         output_question = x
         right_answer = y
@@ -33,8 +34,10 @@ def main_operation():
         print('Your answer:', end=' ')
         answer = input()
         if answer != str(right_answer):
-            return print('\'' + str(answer) + '\' is wrong answer ;\(. Correct answer was \'' + str(right_answer) + '\'.\nLet\'s try again, ' + name + '!')
-            print('Correct!')
+            return print(f"""\"{str(answer)}\" is wrong answer ;(. \
+Correct answer was \"{str(right_answer)}\".
+Let\'s try again, {name}!""")
+        print('Correct!')
         i = i + 1
     return print('Congratulations, ' + name + '!')
 

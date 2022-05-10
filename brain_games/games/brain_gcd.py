@@ -46,7 +46,9 @@ def main_operation():
         print('Your answer:', end=' ')
         answer = input()
         if answer != str(right_answer):
-            return print('\'' + str(answer) + '\' is wrong answer ;\(. Correct answer was \'' + str(right_answer) + '\'.\nLet\'s try again, ' + name + '!')
+            return print(f"""\"{str(answer)}\" is wrong answer ;(. \
+Correct answer was \"{str(right_answer)}\"
+Let\'s try again, {name}!""")
         print('Correct!')
         i = i + 1
     return print('Congratulations, ' + name + '!')

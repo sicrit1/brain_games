@@ -8,7 +8,9 @@ def question():
     print(f'Question: {random_number}')
     print('Your answer:', end=' ')
     answer = input()
-    return ((random_number % 2 == 0 and answer == 'yes') or (random_number % 2 != 0 and answer == 'no'), answer, random_number)
+    a = random_number % 2 == 0 and answer == 'yes'
+    b = random_number % 2 != 0 and answer == 'no'
+    return ((a or b), answer, random_number)
 
 
 def is_even():
@@ -24,7 +26,9 @@ def is_even():
                 right_answer = "\"yes\""
             else:
                 right_answer = "\"no\""
-            return print('\"' + argument[1] + '\" is wrong answer ;(. Correct answer was ' + right_answer + '\nLet\'s try again, ' + name + '!')
+            return print(f"""\"{argument[1]}\" is wrong answer ;(. \
+Correct answer was {right_answer}.
+Let\'s try again, {name}!""")
         print('Correct!')
         i = i + 1
     return print('Congratulations, ' + name + '!')
